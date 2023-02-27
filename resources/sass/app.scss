@@ -1,0 +1,34 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-pokemon {
+    background-image: linear-gradient(45deg,rgba(141, 51, 76, 0.5),rgba(207, 105, 100, 0.5)), url('https://wallpaperaccess.com/full/7062960.jpg');
+    // height: 99.9vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: linear-gradient(45deg,#8D334C,#CF6964);
+    //     opacity: 0.5;
+    //     top: 0;
+    //     z-index: 1;
+    // }
+}
