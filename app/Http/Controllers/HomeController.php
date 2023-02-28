@@ -28,25 +28,19 @@ class HomeController extends Controller
         return view('home');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function trainer(Request $request)
     {
         $user_id = $request->has('user_id') ? $request->user_id : Auth::user()->id;
-        // dd($user_id);
         return view('profile', compact('user_id'));
     }
     
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function allTrainers()
     {
         return view('trainer-list');
+    }
+
+    public function settings()
+    {
+        return view('settings');
     }
 }

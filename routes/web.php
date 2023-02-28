@@ -32,8 +32,14 @@ Route::get('/my-pokemons', [HomeController::class, 'trainer'])->name('trainer-se
 Route::get('/trainer', [HomeController::class, 'trainer'])->name('trainer-others');
 Route::get('/trainers', [HomeController::class, 'allTrainers'])->name('trainers-all');
 
+// User settings
+Route::get('/account-settings', [HomeController::class, 'settings'])->name('user-settings');
+
 // User related APIs
+Route::get('/user/current', [UserController::class, 'current'])->name('user-current');
 Route::get('/users', [UserController::class, 'all'])->name('users-all');
+Route::post('/user/update', [UserController::class, 'update'])->name('user-update-details');
+Route::post('/user/password/change', [UserController::class, 'changePassword'])->name('users-update-password');
 
 Route::group(['prefix' => 'pokemon'], function() {
     Route::get('/user-preference', [PokemonController::class, 'show'])->name('pokemons-user-preference');

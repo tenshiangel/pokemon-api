@@ -12,6 +12,7 @@ import PokemonList from './components/PokemonList.vue';
 import Navigation from './components/Navigation.vue';
 import Profile from './components/Profile.vue';
 import Trainers from './components/Trainers.vue';
+import Update from './components/Update.vue';
 import "vue-awesome-paginate/dist/style.css";
 
 /**
@@ -26,6 +27,7 @@ app.component('pokemon-list', PokemonList);
 app.component('nav-bar', Navigation);
 app.component('profile-panel', Profile);
 app.component('trainers-panel', Trainers);
+app.component('update-panel', Update);
 
 /**
  * The following block of code mays be used to automatically register your
