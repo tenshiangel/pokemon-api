@@ -67,6 +67,7 @@ userPreference(props.trainer);
                         </div>
                     </div>
                 </div>
+                
                 <div v-if="isLoading" class="flex-1 pt-3">
                     <div v-for="index in 2" class="grid grid-cols-1 lg:grid-cols-3 gap-3 mx-auto px-6 py-2">
                         <div v-for="index in 3" class="max-w-sm rounded bg-white overflow-hidden relative shadow-sm">
@@ -98,24 +99,19 @@ userPreference(props.trainer);
                         </div>
                     </div>
                 </div>
-                <!-- <div v-else class="flex-1 pt-3">
+                <div v-else-if="!isLoading" class="flex-1 pt-3">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mx-auto px-6 py-2">
                         <PokemonCard v-for="pokemon in likedPokemons" :pokeapi="pokemon.url" :view-only="true" :category="'liked'" />
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mx-auto px-6 py-2">
                         <PokemonCard v-for="pokemon in hatedPokemons" :pokeapi="pokemon.url" :view-only="true" :category="'hated'" />
                     </div>
-                </div> -->
-                <div v-else class="flex-1 min-h-full place-items-center py-24 px-6 sm:py-32 lg:px-8">
+                </div>
+                <div v-else-if="!isLoading && likedPokemons.length < 1 && hatedPokemons.length < 1" class="flex-1 min-h-full place-items-center py-24 px-6 sm:py-32 lg:px-8">
                     <div class="text-center">
                         <GlobeAsiaAustraliaIcon class="h-36 w-36 block mx-auto" />
-                        <!-- <p class="text-base font-semibold text-indigo-600">404</p> -->
                         <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">No Pokemon Interaction</h1>
                         <p class="mt-6 text-base leading-7 text-gray-600">This trainer doesn't seem to have any liked or hated pokemons. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est.</p>
-                        <!-- <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back home</a>
-                        <a href="#" class="text-sm font-semibold text-gray-900">Contact support <span aria-hidden="true">&rarr;</span></a>
-                        </div> -->
                     </div>
                 </div>
             </div>
