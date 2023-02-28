@@ -126,7 +126,7 @@ console.log(props.userName);
                     <div>
                         <MenuButton class="flex justify-center items-center rounded-full bg-gray-800 py-1 pr-2 text-gray-400 hover:text-white focus:outline-none">
                             <UserCircleIcon class="h-8 w-8 mr-3" />
-                            <span >{{ userName }}</span>
+                            <span>{{ userName }}</span>
                         </MenuButton>
                     </div>
                     <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">

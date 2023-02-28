@@ -35,8 +35,9 @@ class HomeController extends Controller
      */
     public function trainer(Request $request)
     {
-        $user = $request->has('user_id') ? User::find($request->user_id) : Auth::user();
-        return view('trainer', compact('user'));
+        $user_id = $request->has('user_id') ? $request->user_id : Auth::user()->id;
+        // dd($user_id);
+        return view('profile', compact('user_id'));
     }
     
     /**

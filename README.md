@@ -6,6 +6,8 @@ Make sure to install the dependencies
 
 ```bash
 npm install
+
+(note: currently using npm v14.21.3)
 ```
 
 ## Development

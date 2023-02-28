@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<profile-panel />
+<profile-panel :trainer="'{{ $user_id }}'" />
 @endsection

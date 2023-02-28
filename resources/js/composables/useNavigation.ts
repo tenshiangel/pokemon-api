@@ -6,7 +6,7 @@ export default function useNavigation() {
         menus: [
             { name: 'Home', href: '/home', current: true },
             { name: 'My Pokemons', href: '/my-pokemons', current: false },
-            { name: 'Trainers', href: '#', current: false },
+            { name: 'Trainers', href: '/trainers', current: false },
             { name: 'News & Forums', href: '#', current: false },
         ]
     });

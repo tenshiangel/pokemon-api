@@ -38,9 +38,9 @@ export default function usePokemon() {
         });
     }
 
-    const userPreference = async () => {
+    const userPreference = async (trainer_id: number) => {
         state.isLoading = true;
-        await axios.get('/pokemon/user-preference')
+        await axios.get('/pokemon/user-preference', { params: { user_id: trainer_id } })
         .then((response) => {
             let data = response.data.data;
 

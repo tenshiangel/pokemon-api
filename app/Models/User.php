@@ -40,7 +40,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $appends = ['name'];
+    protected $appends = ['name', 'initials'];
     /**
      * The attributes that should be cast.
      *
@@ -53,6 +53,11 @@ class User extends Authenticatable
     public function getNameAttribute()
     {
         return ucfirst($this->attributes['first_name']) . ' ' . ucfirst($this->attributes['last_name']);
+    }
+
+    public function getInitialsAttribute()
+    {
+        return strtoupper(substr($this->attributes['first_name'], 0, 1) . substr($this->attributes['last_name'], 0, 1));
     }
 
     public function favorite(): HasOne

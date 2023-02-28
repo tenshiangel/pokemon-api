@@ -5,6 +5,7 @@ use App\Http\Controllers\HatedPokemonController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikedPokemonController;
 use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +26,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/my-pokemons', [HomeController::class, 'trainer'])->name('trainer-specific');
-Route::get('/trainers', [HomeController::class, 'allTrainers'])->name('trainers-list');
+
+// Trainer-related pages (including the current logged-in user)
+Route::get('/my-pokemons', [HomeController::class, 'trainer'])->name('trainer-self');
+Route::get('/trainer', [HomeController::class, 'trainer'])->name('trainer-others');
+Route::get('/trainers', [HomeController::class, 'allTrainers'])->name('trainers-all');
+
+// User related APIs
+Route::get('/users', [UserController::class, 'all'])->name('users-all');
 
 Route::group(['prefix' => 'pokemon'], function() {
     Route::get('/user-preference', [PokemonController::class, 'show'])->name('pokemons-user-preference');
